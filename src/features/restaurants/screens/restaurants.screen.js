@@ -8,6 +8,7 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
   ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
+  background-color: ${(props) => props.theme.colors.ui.primary};
 `;
 
 const SearchContainer = styled.View`
