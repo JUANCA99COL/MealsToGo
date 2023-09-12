@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components/native";
 import { Text, Image } from "react-native";
 import { Card } from "react-native-paper";
+import { Spacer } from "../../../components/spacer/spacer.component";
 
 const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
@@ -82,13 +83,17 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
           <SectionEnd>
             {isClosedTemporarily && (
               <Message variant="label" style={{ color: "red" }}>
-                Closed Temporarily
+                Closed Temporary
               </Message>
             )}
-            <Image
-              style={{ width: 40, height: 40 }}
-              source={{ uri: icon[0] }}
-            />
+            <Spacer variant="left.large" /> Open Now
+            <Spacer variant="left.large" />
+            <Spacer position="left" size="large">
+              <Image
+                style={{ width: 25, height: 25 }}
+                source={{ uri: icon[0] }}
+              />
+            </Spacer>
           </SectionEnd>
         </Section>
         <Address>{address}</Address>
